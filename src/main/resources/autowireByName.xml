@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="specification" class="com.example.autowire.name.Specification">
+        <property name="make" value="Honda"></property>
+        <property name="model" value="City"></property>
+    </bean>
+
+    <bean id="myCar" class="com.example.autowire.name.Car" autowire="byName">
+        <!-- Car bean is having a dependency on Specification bean, but we are not explicitly wiring it here -->
+        <!-- So whatever dependency Car class needs will be provided By name -->
+    </bean>
+
+</beans>
